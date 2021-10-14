@@ -9,7 +9,7 @@ public class EnemySpawn : MonoBehaviour
 	public float startTimeBtwSpawn;
 //	public float spawnDelay;
 
-	void Start()
+	void Update()
 	{
 		if (timebtwspawn <= 0)
 		{

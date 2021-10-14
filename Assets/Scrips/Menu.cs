@@ -9,12 +9,12 @@ public class Menu : MonoBehaviour
     // skrivet av Markus
 
     // Options menu
-    GameObject optionsMenu;
-    public bool options = false;
+    public GameObject optionsMenu;
+    bool options = false;
 
     // Pause menu
-    GameObject pauseMenu;
-    public bool pause = false;
+    public GameObject pauseMenu;
+    bool pause = false;
 
 
     // Start av scenen
@@ -51,6 +51,12 @@ public class Menu : MonoBehaviour
         }
     }
 
+    public void resume()
+    {
+        pause = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+    }
 
 
 
@@ -67,8 +73,9 @@ public class Menu : MonoBehaviour
     }
 
 
-    // Options Menu knappar
+    // Options Menu knappar. Inte klart
 
+    //---------------------------//
     public void settings()
     {
         optionsMenu.SetActive(true);
@@ -81,6 +88,8 @@ public class Menu : MonoBehaviour
     }
 
 
+    //------------------------------//
+
 
     // Quit knapp
 
@@ -88,4 +97,5 @@ public class Menu : MonoBehaviour
     {
         Application.Quit();
     }
+
 }

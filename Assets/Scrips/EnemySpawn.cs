@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-	public GameObject Object;
-	float timebtwspawn;
-	public float startTimeBtwSpawn;
-//	public float spawnDelay;
+	public Transform[] spawnPoints;
+	public GameObject[] enemyPrefabs;
 
-	void Start()
+	private void Update()
 	{
-		if (timebtwspawn <= 0)
 		{
-			Instantiate(Object, transform.position, Quaternion.identity);
-			
+			if (Input.GetMouseButtonDown(0))
+			{
+				int randEnemy = Random.Range(0, enemyPrefabs.Length);
+				int randSpawnPoint = Random.Range(0, spawnPoints.Length);
+
+				Instantiate(enemyPrefabs[0], spawnPoints[randSpawnPoint].position, transform.rotation);
+			}
+
 		}
-		else
-		{
-			timebtwspawn -= Time.deltaTime;
-		}
-		
 	}
 }
